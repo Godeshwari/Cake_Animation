@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bake a Wish 🎂 Birthday Cake Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light" data-bg="candy">
+
+  <canvas id="fx-canvas"></canvas>
+  <div id="balloon-layer" aria-hidden="true"></div>
+
+  <div class="app">
+
+    <!-- ============ CONTROL PANEL ============ -->
+    <aside class="panel" id="panel">
+      <div class="panel-head">
+        <span class="eyebrow">Bake a Wish</span>
+        <h1>Cake Studio</h1>
+      </div>
+
+      <div class="field">
+        <label for="nameInput">Whose birthday?</label>
+        <input id="nameInput" type="text" maxlength="24" placeholder="Type a name…" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="flavorSelect">Cake flavor</label>
+        <select id="flavorSelect">
+          <option value="vanilla">Vanilla Buttercream</option>
+          <option value="chocolate">Dark Chocolate</option>
+          <option value="strawberry">Strawberry Swirl</option>
+          <option value="mint">Mint Pistachio</option>
+          <option value="lemon">Lemon Zest</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="bgSelect">Backdrop</label>
+        <select id="bgSelect">
+          <option value="candy">Candy Sky</option>
+          <option value="night">Starlit Night</option>
+          <option value="garden">Garden Party</option>
+          <option value="disco">Disco Confetti</option>
+        </select>
+      </div>
+
+      <div class="field candle-field">
+        <label>Candles <span id="candleCount">1</span></label>
+        <div class="stepper">
+          <button type="button" id="candleMinus" aria-label="Remove a candle">–</button>
+          <input type="range" id="candleSlider" min="1" max="16" value="1" step="1">
+          <button type="button" id="candlePlus" aria-label="Add a candle">+</button>
+        </div>
+      </div>
+
+      <div class="field toggle-row">
+        <span>Appearance</span>
+        <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false">
+          <span class="toggle-icon">☀️</span>
+          <span class="toggle-icon">🌙</span>
+          <span class="toggle-dot"></span>
+        </button>
+      </div>
+
+      <div class="action-grid">
+        <button type="button" id="blowBtn" class="btn btn-primary">🎂 Make a Wish</button>
+        <button type="button" id="relightBtn" class="btn">🔥 Relight</button>
+        <button type="button" id="confettiBtn" class="btn">🎉 Confetti</button>
+        <button type="button" id="balloonBtn" class="btn">🎈 Balloons</button>
+        <button type="button" id="fireworksBtn" class="btn">✨ Fireworks</button>
+        <button type="button" id="musicBtn" class="btn" aria-pressed="false">🎵 Play Tune</button>
+      </div>
+
+      <button type="button" id="downloadBtn" class="btn btn-download">⬇ Download PNG</button>
+
+      <p class="hint">Tip: click any candle flame to snuff it out one at a time.</p>
+    </aside>
+
+    <!-- ============ STAGE ============ -->
+    <main class="stage-wrap">
+      <div class="stage" id="stage">
+        <div class="banner" id="banner">
+          <span id="bannerName">Happy Birthday!</span>
+        </div>
+
+        <div class="cake-scene">
+          <div class="table-shadow"></div>
+          <div class="cake" id="cake">
+            <div class="plate"></div>
+            <div class="candles" id="candlesRow"></div>
+            <div class="tier tier-top">
+              <div class="frosting-top"></div>
+              <div class="drip drip-1"></div>
+              <div class="drip drip-2"></div>
+              <div class="drip drip-3"></div>
+              <div class="sprinkles"></div>
+            </div>
+            <div class="tier tier-bottom">
+              <div class="frosting-swirl"></div>
+              <div class="sprinkles sprinkles-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <button type="button" id="panelToggle" class="panel-toggle" aria-label="Toggle controls">☰</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
