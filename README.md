@@ -1,4 +1,4 @@
-# 🎂 Bake a Wish — Interactive Birthday Cake
+# 🎂 Bake a Wish
 
 An interactive and customizable **Birthday Cake Web App** built with **HTML, CSS, and JavaScript**. Personalize your cake, light and blow out candles, launch confetti and fireworks, play a birthday tune, and download your celebration as a PNG—all directly in the browser with no installation required.
 
